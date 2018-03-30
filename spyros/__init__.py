@@ -1,12 +1,9 @@
-"""Functions in this package can be of different types:
+"""This package is divided into two modules be of different types:
 
-Function types
---------------
-- slow: Slow but correct implementations for testing purposes.
-- pure_python: highly portable fast implementations not requiring any other than bottleneck, numpy, pandas or scipy
+Modules
+-------
 - numba: fast implementations requiring numba
-- cython: fast implementations requiring cythonization
-- c: fast implementations in requiring C source compilation
+- others: implementations using other libraries
 
 References
 ----------
@@ -22,6 +19,11 @@ References
 
 Those that are not available out there, require custom implementations:
 Take a look at
-https://docs.scipy.org/doc/numpy-1.13.0/reference/ufuncs.html#methods for ideas
-using numpy ufunc's.
+- https://docs.scipy.org/doc/numpy-1.13.0/reference/ufuncs.html#methods
+- http://numba.pydata.org/numba-doc/latest/user/vectorize.html
+- and the numba module in this package
+to learn how to write your own numpy ufunc's.
 """
+
+from .numba import *
+from .others import *
