@@ -1,6 +1,8 @@
 # New functions
 cummax
 cummin
+fillna_holes (similar to Pandas' fillna)
+find (on boolean arrays, similar to Matlab's find)
 
 # New internals
 Create automatic mov/cum-type functions from reduce-type functions at the expense of some speed
