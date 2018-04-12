@@ -5,7 +5,7 @@ import pandas.core.nanops as nanops
 __all__ = ['mean', 'var', 'std', 'sum', 'prod', 'max', 'min',
            'nanmean', 'nanvar', 'nanstd', 'nansum', 'nanprod',
            'nanmax', 'nanmin', 'nanargmax', 'nanargmin', 'nanmedian', 'ss',
-           'anynan', 'allnan', 'nansem', 'nanskew', 'nankurt', 'nanpercentile']
+           'nanany', 'nanall', 'nansem', 'nanskew', 'nankurt', 'nanpercentile']
 
 # Unary reducing functions
 # Signature: roughly (n)->()
@@ -28,8 +28,8 @@ nanargmax = bn.nanargmax
 nanargmin = bn.nanargmin
 nanmedian = bn.nanmedian
 ss = bn.ss
-anynan = bn.anynan
-allnan = bn.allnan
+nanany = bn.anynan
+nanall = bn.allnan
 nansem = nanops.nansem
 nanskew = nanops.nanskew
 nankurt = nanops.nankurt
@@ -37,7 +37,7 @@ nanpercentile = np.nanpercentile
 
 # Binary reducing functions
 # Signature: roughly (n),(n)->()
-cov = nanops.nancov
-corr = nanops.nancorr
+nancov = nanops.nancov
+nancorr = nanops.nancorr
 
 

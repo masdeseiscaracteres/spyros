@@ -2,7 +2,7 @@ import numpy as np
 import bottleneck as bn
 import pandas.core.nanops as nanops
 
-__all__ = ['gt', 'ge', 'lt', 'le', 'eq', 'ne',
+__all__ = ['nangt', 'nange', 'lt', 'le', 'eq', 'ne',
            'mov_sum', 'mov_mean', 'mov_std', 'mov_var',
            'mov_min', 'mov_max', 'mov_argmin',
            'mov_argmax', 'mov_median', 'mov_rank',
@@ -10,25 +10,32 @@ __all__ = ['gt', 'ge', 'lt', 'le', 'eq', 'ne',
 
 # Binary element-wise functions
 # Signature: (),()->()
-gt = nanops.nangt
-ge = nanops.nange
-lt = nanops.nanlt
-le = nanops.nanle
-eq = nanops.naneq
-ne = nanops.nanne
+nangt = nanops.nangt
+nange = nanops.nange
+nanlt = nanops.nanlt
+nanle = nanops.nanle
+naneq = nanops.naneq
+nanne = nanops.nanne
 
 # Moving window functions
-mov_sum = bn.move_sum
-mov_mean = bn.move_mean
-mov_std = bn.move_std
-mov_var = bn.move_var
-mov_min = bn.move_min,
-mov_max = bn.move_max
-mov_argmin = bn.move_argmin
-mov_argmax = bn.move_argmax
-mov_median = bn.move_median
-mov_rank = bn.move_rank
+movsum = bn.move_sum
+movmean = bn.move_mean
+movstd = bn.move_std
+movvar = bn.move_var
+movmin = bn.move_min
+movmax = bn.move_max
+movargmin = bn.move_argmin
+movargmax = bn.move_argmax
+movmedian = bn.move_median
+movrank = bn.move_rank
 
 # Expanding window functions
-cum_sum = np.nancumsum
-cum_prod = np.nancumprod
+cumsum = np.cumsum
+cumprod = np.cumprod
+nancumsum = np.nancumsum
+nancumprod = np.nancumprod
+cummax = np.cummax
+cummin = np.cummin
+nancummax = np.fmax.accumulate
+nancummin = np.fmin.accumulate
+

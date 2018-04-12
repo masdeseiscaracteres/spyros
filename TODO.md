@@ -1,6 +1,4 @@
 # New functions
-cummax
-cummin
 fillna_holes (similar to Pandas' fillna)
 find (on boolean arrays, similar to Matlab's find)
 
