@@ -38,5 +38,6 @@ steps:
   displayName: 'Twine authentication'
   
 - script: |
+    pip install twine
     twine upload -r "wheels" --config-file $(PYPIRC_PATH) dist/*.whl
   displayName: 'Upload artifacts'
