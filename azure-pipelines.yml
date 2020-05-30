@@ -29,8 +29,8 @@ steps:
   displayName: 'Install dependencies'
 
 - script: |
-    pip wheel .
-  displayName: 'Build wheel'
+    python setup.py sdist bdist_wheel
+  displayName: 'Build packages'
   
 - task: TwineAuthenticate@0
   inputs:
@@ -38,5 +38,5 @@ steps:
   displayName: 'Twine authentication'
   
 - script: |
-    twine upload -r "wheels" --config-file $(PYPIRC_PATH) *.whl
+    twine upload -r "wheels" --config-file $(PYPIRC_PATH) dist/*.whl
   displayName: 'Upload artifacts'
