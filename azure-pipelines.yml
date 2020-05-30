@@ -34,7 +34,7 @@ steps:
   
 - task: TwineAuthenticate@0
   inputs:
-    artifactFeeds: 'wheels'
+    artifactFeed: Wheels/wheels
   displayName: 'Twine authentication'
   
 - script: |
