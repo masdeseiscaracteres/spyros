@@ -32,7 +32,7 @@ steps:
     pip wheel .
   displayName: 'Build packages'
   
-- task: TwineAuthenticate@0
+- task: TwineAuthenticate@1
   inputs:
     artifactFeed: Wheels/wheels
   displayName: 'Twine authentication'
