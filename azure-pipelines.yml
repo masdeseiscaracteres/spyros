@@ -31,3 +31,12 @@ steps:
 - script: |
     pip wheel .
   displayName: 'Build wheel'
+  
+- task: TwineAuthenticate@0
+  inputs:
+    artifactFeeds: 'wheels'
+  displayName: 'Twine authentication'
+  
+- script: |
+    twine upload -r "wheels" --config-file $(PYPIRC_PATH) *.whl
+  displayName: 'Upload artifacts'
