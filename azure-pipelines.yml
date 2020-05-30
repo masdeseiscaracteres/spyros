@@ -39,5 +39,5 @@ steps:
   
 - script: |
     pip install twine
-    twine upload -r "wheels" --config-file $(PYPIRC_PATH) spyros-*
+    twine upload -r Wheels/wheels --config-file $(PYPIRC_PATH) spyros-*
   displayName: 'Upload artifacts'
